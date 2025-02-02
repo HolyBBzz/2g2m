@@ -1,4 +1,3 @@
-
 <html>
     <meta charset="utf-8">
     <head>
@@ -40,7 +39,7 @@
                 flex-direction: row;
                 border: white solid 2px;
                 border-color: aliceblue;
-                /*justify-content: flex-start;*/
+                justify-content:space-around;
                 width: 100%;
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
@@ -61,6 +60,21 @@
                 align-items: center; 
                 justify-content: center;
             }
+            .game-box {
+                width: 100%; 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center;
+            }
+            .play-button:hover {
+                background-color: #4E9C4E;
+                cursor: pointer;
+            }
+            .play-button {
+                background-color: #5CB85C;
+                cursor: pointer;
+            }
 
         </style>
     </head>
@@ -70,7 +84,7 @@
         <div class="main-text centr" style="margin-top: 20px; box-shadow: 0px 0px 10px #333333;">
             <div class="choose-menu">
                 <div class="choose centr main">- Основное -</div>
-                <div class="choose centr rules">- Правила -</div>
+                <div class="choose centr button-back">- Мини игры -</div>
                 <div class="choose centr history">- История -</div>
                 <div class="choose centr links">- Ссылки -</div>
             </div>
@@ -92,7 +106,7 @@
                     </div>
                     <div class="box">
                         <p style="width: 70%; text-align: center; margin-bottom: 100px;">Не смотря на то, что это анархия. На ней есть одно правило и две рекомендации
-                            Главное правило 2g2m — "игрока, против которого весь сервер, кикают, но если хоть один человек не против игрока, то его не кикают",
+                            Главное правило 2g2m — "Если владельцы посчитают нужным кикнуть игрока, то его кикают",
                             и рекомендации: "Не очищать и не просить очищать карту, так как она никогда не будет очищена" и "не писать Польше и Мудрому дереву в лс по поводу проблем."
                         </p>
                     </div>
@@ -215,6 +229,52 @@
                         <p style="width: 70%; text-align: center; margin-top: 100px; margin-bottom: 100px;">На данный момент это вся история 2g2m, но сервер продолжает существовать, и история будет продолжатся!</p>
                     </div>
             </div>
+
+            <div class="mini-games" style="display: none;">
+                <div class="box">
+                    <p style="width: 70%; text-align: center; margin-top: 100px; margin-bottom: 100px;">В данном отделе созданы разные мини игры, которые помогут скоротать время, и просто устроить себе челлендж<br>(Ну и мне будет что попрограммировать)</p>
+                </div>
+                <div class="box" style="margin-bottom: 100px;">
+                    <img src="firstgame.png" width="40%">
+                    <div class="game-box" style="display: flex; flex-direction: column; width: 50%; margin-left: 10px;">
+                        <p style="text-align: center;">Взлом жопы.ru</p>
+                        <button class="play-button game-first-button" style="color: white; border-radius: 5px; border: 0px; width: 60%; height: 40px; font-size: 20; font-family: Comic Sans MS, Comic Sans;">Играть</button>
+                    </div>
+                </div>
+                <div class="box" style="margin-bottom: 100px;">
+                    <div class="game-box" style="display: flex; flex-direction: column; width: 50%; margin-left: 10px;">
+                        <p style="text-align: center;">Поймай Фаянса!</p>
+                        <button class="play-button game-second-button" style="color: white; border-radius: 5px; border: 0px; width: 60%; height: 40px; font-size: 20; font-family: Comic Sans MS, Comic Sans;">Играть</button>
+                    </div>
+                    <img src="secondgame.png" width="40%">
+                </div>
+            </div>
+
+            <div class="game-box game-first-menu" style="display: none">
+                <p style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Добро пожаловать в мини-игру<br>"Взлом жопы.ru"</p>
+                <div class="game-first" style="width: 800px; height: 450px; background-color: white; border: white solid 2px; border-radius: 5px; color: black; font-family: sans-serif;">
+                    <div style="display: flex; justify-content: center; align-items: center; margin: auto; flex-direction: column;">
+                        <h1>Взлом жопы.ru</h1>
+                        <input style="width: 300px; height: 30px; font-size: 20;" placeholder="Введите имя пользователя"><br>
+                        <button>нажмите, чтобы взломать</button>
+                        <p class='game-text' style="display: none; text-align: center;"></p>
+                        <img src="loading.png" width="70px" style="opacity: 0.5; display: none;" class="loading-first-game">
+                    </div>
+                </div>
+                <p style="width: 70%; margin-top: 100px; margin-bottom: 100px; text-align: center;">Этот так скажем "прикол", был создан Польшей, как чисто проверка своих возможностей. И по итогу он выпустил этот сайт в тгк 2g2m чтобы люди посмотрели и поприкалывались. Данная версия слегка обновлена</p>
+                <!--<button class="button-back play-button" style="color: white; border-radius: 5px; border: 0px; width: 400px; height: 40px; font-size: 20; font-family: Comic Sans MS, Comic Sans; margin-bottom: 50px;">Вернутся назад</button>-->
+            </div>
+
+            <div class="game-box game-second-menu" style="display: none">
+                <p style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Добро пожаловать в мини-игру<br>"Поймай Фаянса"</p>
+                <div class="game-second" style="width: 800px; height: 450px; border: white solid 2px; border-radius: 5px; background-image: url('fayansgameback.png');"> 
+                    <img src="fayansface1.png" style="display: none; position: absolute;">
+                    <p style="display: flex; justify-content: center; transform: translateX(50%) translateY(400px); background-color: #333333; border-radius: 5px; width: 50%;">dghfghfdgh</p>
+                </div>
+                <p style="width: 70%; margin-top: 100px; margin-bottom: 100px; text-align: center;">Как играть: успей нажать на Фаянса, пока он не пропал. Получи как можно больше очков<br><br>Эта игра иронизирует то, что второй владелец "Фаянс" заходит очень редко и не надолго. И тебе нужно успеть его поймать, чтобы получить одно очко</p>
+                <!--<button class="button-back play-button" style="color: white; border-radius: 5px; border: 0px; width: 400px; height: 40px; font-size: 20; font-family: Comic Sans MS, Comic Sans; margin-bottom: 50px;">Вернутся назад</button>-->
+            </div>
+
             <div class="treeboo" style="display: none;">
             <div class="treeboo" style="width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center;">
                 <img src="Tree.png" style="margin-right: 10px;">
@@ -223,106 +283,5 @@
         </div>
     </div>
     </body>
-    <script>
-        function newPage() {
-            anime({
-                targets: text,
-                opacity: [{value: 0, duration: 0},
-                {value: 1, duration: 200}],
-                translateY: [{value: -10, duration: 0},
-                {value: 0, duration: 200}],
-                easing: 'easeOutQuad'
-            })
-        }
-        let backgr = document.querySelector('body')
-        let matext = document.querySelector('.ma-text')
-        let historytext = document.querySelector('.history-text')
-        let links = document.querySelector('.links')
-        let main = document.querySelector('.main')
-        let text = document.querySelector('.text')
-        let history = document.querySelector('.history')
-        let syn = document.querySelector('.syn')
-        let synimg = document.querySelector(".synimg")
-        let tx2 = document.querySelector(".tx2")
-        let treeboo = document.querySelector(".treeboo")
-        const backgrounds = ['back1.png', 'back2.png', 'back3.png', 'back4.png', 'back5.png', 'back6.png', 'back7.png', 'back8.png']
-
-        syn.addEventListener("mouseenter", function() {
-            anime({
-                targets: synimg,
-                opacity: 1,
-                duration: 10000,
-                easing: 'easeOutQuad'
-            }).finished.then(function(){
-                anime({
-                    targets: synimg,
-                    opacity: 0,
-                    duration: 100,
-                    easing: 'easeOutQuad'
-                })
-            })
-        })
-        syn.addEventListener("mouseleave", function() {
-            anime({
-                targets: synimg,
-                opacity: 0,
-                duration: 10000,
-                easing: 'easeOutQuad'
-            })
-        })
-
-        syn.addEventListener("mouseenter", function() {
-            anime({
-                targets: tx2,
-                opacity: 1,
-                duration: 10000,
-                easing: 'easeOutQuad'
-            }).finished.then(function(){
-                anime({
-                targets: tx2,
-                opacity: 0,
-                duration: 100,
-                easing: 'easeOutQuad'
-            })
-            })
-        })
-        syn.addEventListener("mouseleave", function() {
-            anime({
-                targets: tx2,
-                opacity: 0,
-                duration: 10000,
-                easing: 'easeOutQuad'
-            })
-        })
-
-        anime({
-            targets: text,
-            opacity: [{value: 0, duration: 0},
-            {value: 1, duration: 1000}],
-            translateY: [{value: -20, duration: 0},
-            {value: 0, duration: 1000}],
-            easing: 'easeOutQuad'
-        })
-
-        backgr.style.backgroundImage = "url('" + backgrounds[Math.floor(Math.random() * 7)] + "')";
-
-        links.addEventListener('click', function(){
-            treeboo.style.display = "block"
-            historytext.style.display = "none"
-            matext.style.display = "none"
-            newPage()
-        })
-        main.addEventListener('click', function(){
-            historytext.style.display = "none"
-            treeboo.style.display = "none"
-            matext.style.display = "block"
-            newPage()
-        })
-        history.addEventListener('click', function(){
-            historytext.style.display = "block"
-            treeboo.style.display = "none"
-            matext.style.display = "none"
-            newPage()
-        })
-    </script>
+    <script src="index.js"></script>
 </html>
