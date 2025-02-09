@@ -15,6 +15,7 @@
                 height: max-content;
                 background-color: #333333;
                 color: white;
+                src: "Comic Sans MS.ttf";
                 font-family: "Comic Sans MS", "Comic Sans";
                 font-size: 20;
                 border-radius: 10px;
@@ -46,8 +47,18 @@
             }
 
             .choose {
+                /*border: white solid 1px;*/
+                width: 25%;
                 font-size: 20;
             }
+
+            .choose.main {
+                border-top-left-radius: 7px;
+            }
+            .choose.links {
+                border-top-right-radius: 7px;
+            }
+
             .choose:hover {
                 background-color: white;
                 color: black;
@@ -73,6 +84,13 @@
             }
             .play-button {
                 background-color: #5CB85C;
+                cursor: pointer;
+            }
+
+            .game-second img:hover {
+                cursor: pointer;
+            }
+            .game-third img:hover {
                 cursor: pointer;
             }
 
@@ -248,10 +266,17 @@
                     </div>
                     <img src="secondgame.png" width="40%">
                 </div>
+                <div class="box" style="margin-bottom: 100px;">
+                    <img src="thirdgame.png" width="40%">
+                    <div class="game-box" style="display: flex; flex-direction: column; width: 50%; margin-left: 10px;">
+                        <p style="text-align: center;">Очисть лимит</p>
+                        <button class="play-button game-third-button" style="color: white; border-radius: 5px; border: 0px; width: 60%; height: 40px; font-size: 20; font-family: Comic Sans MS, Comic Sans;">Играть</button>
+                    </div>
+                </div>
             </div>
 
             <div class="game-box game-first-menu" style="display: none">
-                <p style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Добро пожаловать в мини-игру<br>"Взлом жопы.ru"</p>
+                <p style="text-align: center; margin-top: 50px; margin-bottom: 50px; width: 50%;">Добро пожаловать в мини-игру<br>"Взлом жопы.ru"</p>
                 <div class="game-first" style="width: 800px; height: 450px; background-color: white; border: white solid 2px; border-radius: 5px; color: black; font-family: sans-serif;">
                     <div style="display: flex; justify-content: center; align-items: center; margin: auto; flex-direction: column;">
                         <h1>Взлом жопы.ru</h1>
@@ -266,14 +291,26 @@
             </div>
 
             <div class="game-box game-second-menu" style="display: none">
-                <p style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Добро пожаловать в мини-игру<br>"Поймай Фаянса"</p>
+                <p style="text-align: center; margin-top: 50px; margin-bottom: 50px; width: 50%;">Добро пожаловать в мини-игру<br>"Поймай Фаянса"</p>
                 <div class="game-second" style="width: 800px; height: 450px; border: white solid 2px; border-radius: 5px; background-image: url('fayansgameback.png');"> 
-                    <img src="fayansface1.png" style="display: none; position: absolute;">
-                    <p style="display: flex; justify-content: center; transform: translateX(50%) translateY(400px); background-color: #333333; border-radius: 5px; width: 50%;">dghfghfdgh</p>
+                    <img src="fayansface1.png" style="display: none; position: absolute;" draggable="false">
+                    <p style="display: flex; justify-content: center; transform: translateX(50%) translateY(395px); background-color: #333333; border-radius: 5px; width: 50%; border: white solid 2px;">dghfghfdgh</p>
                 </div>
                 <p style="width: 70%; margin-top: 100px; margin-bottom: 100px; text-align: center;">Как играть: успей нажать на Фаянса, пока он не пропал. Получи как можно больше очков<br><br>Эта игра иронизирует то, что второй владелец "Фаянс" заходит очень редко и не надолго. И тебе нужно успеть его поймать, чтобы получить одно очко</p>
                 <!--<button class="button-back play-button" style="color: white; border-radius: 5px; border: 0px; width: 400px; height: 40px; font-size: 20; font-family: Comic Sans MS, Comic Sans; margin-bottom: 50px;">Вернутся назад</button>-->
             </div>
+
+            <div class="game-box game-third-menu" style="display: none">
+                <p style="text-align: center; margin-top: 50px; margin-bottom: 50px; width: 50%;">Добро пожаловать в мини-игру<br>"Очисть лимит"</p>
+                <div class="game-third" style="width: 800px; height: 450px; border: white solid 2px; border-radius: 5px; background-image: url('thirdgameback.png'); background-size: cover;"> 
+                    <button class="play-button" style="margin: 10px 10px; position: absolute; color: white; border-radius: 5px; border: white solid 2px;; font-family: Comic Sans MS, Comic Sans; font-size: 20;">заполнить лимит</button>
+                    <img src="gamethirdobj1.png" style="position: absolute; transform: translateX(390px) translateY(240px);" draggable="false">
+                    <p style="display: flex; justify-content: center; transform: translateX(40%) translateY(395px); background-color: #333333; border-radius: 5px; width: 55%; border: white solid 2px;">лимит: 1100/1100 Очищенных лимитов: 0</p>
+                </div>
+                <p style="width: 70%; margin-top: 100px; margin-bottom: 100px; text-align: center;">Как играть: нажимай на заспамленные камни, чтобы они удалялись, и ты смог очистить лимит. При нажатии на кнопку "заполнить лимит" лимит заполнится автоматически. Цель – очистить лимит как можно больше раз. Лимит счиается очищенным, когда лимит, состоящий из 1100 объектов, стал состоять из 100 объектов<br><br>Эта игра показывает некоторым игрокам, как же бесит не только владельцев, но и простых игроков, наспамленные в одном месте объекты.</p>
+                <!--<button class="button-back play-button" style="color: white; border-radius: 5px; border: 0px; width: 400px; height: 40px; font-size: 20; font-family: Comic Sans MS, Comic Sans; margin-bottom: 50px;">Вернутся назад</button>-->
+            </div>
+
 
             <div class="treeboo" style="display: none;">
             <div class="treeboo" style="width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center;">
