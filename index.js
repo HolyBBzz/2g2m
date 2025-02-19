@@ -39,7 +39,27 @@ let buttonback = document.querySelector(".button-back")
 let gamethirdobj1 = gamethird.querySelector("img")
 let gamethirdobj2 = gamethird.querySelector("p")
 let gamethirdobj3 = gamethird.querySelector("button")
+let gamefourthmenu = document.querySelector(".game-fourth-menu")
+let gamefourthbtn = document.querySelector(".game-fourth-button")
+let gamefourth = document.querySelector(".game-fourth")
+let pendiv = gamefourth.querySelector('.pens')
+let gamefourthobj1 = gamefourth.querySelector(".timer")
+let gamefourthbar = gamefourth.querySelector(".bargamefourth")
+let inputfourthgame = gamefourthbar.querySelector("input")
+let textfourthgame = gamefourthbar.querySelector(".need")
 var synsound = new Audio("gong.mp3")
+
+function copyPage(page, me) {
+    navigator.clipboard.writeText(page, me)
+    console.log(me.querySelector("img"))
+    anime({
+        targets: me.querySelector("img"),
+        opacity: [{value: 1, duration: 500},
+            {value: 1, duration: 500},
+            {value: 0, duration: 500},
+        ]
+    })
+}
 
 const backgrounds = ['back1.png', 'back2.png', 'back3.png', 'back4.png', 'back5.png', 'back6.png', 'back7.png', 'back8.png']
 
@@ -126,6 +146,7 @@ links.addEventListener('click', function(){
     gamefirstmenu.style.display = "none"
     gamesecondmenu.style.display = "none"
     gamethirdmenu.style.display = "none"
+    gamefourthmenu.style.display = "none"
     newPage()
 })
 main.addEventListener('click', function(){
@@ -136,6 +157,7 @@ main.addEventListener('click', function(){
     gamefirstmenu.style.display = "none"
     gamesecondmenu.style.display = "none"
     gamethirdmenu.style.display = "none"
+    gamefourthmenu.style.display = "none"
     newPage()
 })
 history.addEventListener('click', function(){
@@ -146,6 +168,7 @@ history.addEventListener('click', function(){
     gamefirstmenu.style.display = "none"
     gamesecondmenu.style.display = "none"
     gamethirdmenu.style.display = "none"
+    gamefourthmenu.style.display = "none"
     newPage()
 })
 
@@ -157,6 +180,7 @@ buttonback.addEventListener('click', function(){
     gamefirstmenu.style.display = "none"
     gamesecondmenu.style.display = "none"
     gamethirdmenu.style.display = "none"
+    gamefourthmenu.style.display = "none"
     newPage()
 })
 
@@ -174,6 +198,12 @@ gamesecondbtn.addEventListener('click', function(){
 
 gamethirdbtn.addEventListener('click', function(){
     gamethirdmenu.style.display = "flex"
+    minigames.style.display = "none"
+    newPage()
+})
+
+gamefourthbtn.addEventListener('click', function(){
+    gamefourthmenu.style.display = "flex"
     minigames.style.display = "none"
     newPage()
 })
@@ -317,3 +347,46 @@ gamethirdobj3.addEventListener("click", function() {
     countobjects = 1100
     gamethirdobj2.innerHTML = "лимит: " + countobjects + "/" + "1100 Очищенных лимитов: " + countclear
 })
+
+const pens = ["pen1.png", "pen2.png", "pen3.png"]
+const pensBack = ["penisgameback1.png", "penisgameback2.png", "penisgameback3.png"]
+
+let lok = document.querySelector(".lok")
+let time = 5
+let countpen = Math.round(Math.random() * 5) + 1
+let rightanswersfourthgame = 0
+let memorybackpen = gamefourth.style.backgroundImage
+
+for (let i = 0; i < countpen; i++) {
+    pendiv.innerHTML += "<img src= '" + pens[Math.round(Math.random() * (pens.length - 1))] + "'style='position: absolute; transform: translateX(" + Math.round(Math.random() * 600) + "px) translateY(" + Math.round(Math.random() * 300) + "px);' draggable='false' width='100px'>"
+    time = 6
+    gamefourthobj1.innerHTML = "Время до перезагрузки: " + time + " сек"
+    inputfourthgame.value = ""
+}
+
+gamefourth.style.backgroundImage = pensBack[Math.round(Math.random() * (pensBack.length - 1))]
+
+setInterval(function() {
+    if (countpen == inputfourthgame.value) {
+        rightanswersfourthgame++
+        textfourthgame.innerHTML = "Правильных ответов: " + rightanswersfourthgame
+    }
+    pendiv.innerHTML = ""
+    countpen = Math.round(Math.random() * 5) + 1
+    for (let i = 0; i < countpen; i++) {
+        pendiv.innerHTML += "<img src= '" + pens[Math.round(Math.random() * (pens.length - 1))] + "'style='position: absolute; transform: translateX(" + Math.round(Math.random() * 600) + "px) translateY(" + Math.round(Math.random() * 300) + "px);' draggable='false' width='100px'>"
+        time = 6
+        gamefourthobj1.innerHTML = "Время до перезагрузки: " + time + " сек"
+        inputfourthgame.value = ""
+    }
+    memorybackpen = gamefourth.style.backgroundImage
+    gamefourth.style.backgroundImage = 'url(' + pensBack[Math.round(Math.random() * (pensBack.length - 1))] + ")"
+    while (memorybackpen == gamefourth.style.backgroundImage) {
+        gamefourth.style.backgroundImage = 'url(' + pensBack[Math.round(Math.random() * (pensBack.length - 1))] + ")"
+    }
+}, 5000)
+
+setInterval(function(){
+    time -= 1
+    gamefourthobj1.innerHTML = "Время до перезагрузки: " + time + " сек"
+}, 1000)
