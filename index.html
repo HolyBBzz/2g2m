@@ -48,6 +48,7 @@
 
             .choose {
                 /*border: white solid 1px;*/
+                height: 100%;
                 width: 25%;
                 font-size: 20;
             }
@@ -128,11 +129,36 @@
                 touch-action: manipulation;
             }
 
+            .ad {
+                height: 800px; 
+                width: 15%;
+                background-color: #333333;
+                color: white;
+                font-family: "Comic Sans MS", "Comic Sans";
+                font-size: 20;
+                border-radius: 10px;
+                flex-direction: column;
+                position: fixed;
+                box-shadow: 0px 0px 10px #333333;
+                display: none;
+            }
+
+            .noselect {
+                -moz-user-select: none;
+                -o-user-select:none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
         </style>
     </head>
     <body>
         <div style="opacity: 0%;">о, ты заметил этот костыль. Поздравляю</div>
         <img src="logo.jpg" class="centr" width="30%" style="border-radius: 20px; margin-top: 70px; box-shadow: 0px 0px 10px #333333;">
+        <div style="display: flex; flex-direction: column;">
+            <div class="ad" style="margin-left: 5%; margin-top: 20px;"></div>
         <div class="main-text centr" style="margin-top: 20px; box-shadow: 0px 0px 10px #333333;">
             <div class="choose-menu">
                 <div class="choose centr main">- Основное -</div>
@@ -250,7 +276,7 @@
                     </div>
                     <div class="box" style="margin-bottom: 100px;">
                         <img src="board.jpg" width="25%">
-                        <p style="width: 50%; margin-left: 10px;">В этот же день Фаянс создал онлайн доску, на которой каждый мог что-то рисовать. К сожалению не сохранилась фотка всей доски, но пару фоток сохранилось. Вот одна из них. Позже, 9 декабря 2024 года Фаянс создаст ещё одну доску, но с неё фоток не осталось (да и по воспоминаниям, там не так уж и много рисовали)</p>
+                        <p style="width: 50%; margin-left: 10px;">В этот же день Фаянс создал онлайн доску, на которой каждый мог что-то рисовать. К сожалению не сохранилась фотка всей доски, но пару фоток сохранилось. Вот одна из них. Позже, 9 декабря 2024 года Фаянс создаст ещё одну доску, но с неё фоток не осталось (да и по воспоминаниям, там не так уж и много рисовали). Сейчас Фаянс переодически создаёт доски, на которых так же можно рисовать всё что угодно</p>
                     </div>
                     <div class="box" style="margin-bottom: 100px;">
                         <p style="width: 40%;">10 декабря 2024 года, для того, чтобы не занимать основной пк Польши под наборы, Польша купил мини пк, который он называет "сервером"</p>
@@ -273,9 +299,17 @@
                         <p style="width: 50%; margin-right: 10px;">В новом году, 4 января 2025 года, после одного случая владельцы серьёзно задумались о удалении единственного правила. На тот момент единственное правило 2g2m звучало так:"игрока, против которого весь сервер, кикают, но если хоть один человек не против игрока, то его не кикают". В один из дней, владельцы заметили, что когда набор заканчивался, а игроки оставались на сервере по сути безнаказазными, они начилали устраивать хаос, вместо стройки рая. После этого случая, был создан опрос об "удалении единственного правила"</p>
                         <img src="ByeRule.png" width="40%">
                     </div>
-                    <div class="box">
+                    <div class="box" style="margin-bottom: 100px;">
                         <img src="ByeRule2.png" width="40%">
                         <p style="width: 50%; margin-left: 10px;">13 января 2025 года Польша решил провести эксперимент, в ходе которого на сервере отсутсвовало правило. И если в течение эксперимента ничего бы произошло такого, из-за чего пришлось бы вернуть правило, правило пропало бы навсегда. И к счастью для анархистов, в течении недели ничего такого не произошло, из-за чего 20 января 2025 года на сервере правило было отменено! Но на всякий случай было создано новое правило, которое не обязывает владельцев кикать игроков, но если они захотят, то кикнут. Этот день стал одним из праздников на 2g2m</p>
+                    </div>
+                    <div class="box" style="margin-bottom: 100px;">
+                        <p style="width: 50%; margin-right: 10px;">С 1 февраля 2025 года на сервере произошла некоторая рокировка. Для того, чтобы люди больше не называли Польшу как "Шио", Польша был вынужден поменять местами Шио и Польшу. Поменялись местами только скины, аккаунты остались на месте. Так же скин Шио был к тому же обновлён</p>
+                        <img src="revers.png" width="40%">
+                    </div>
+                    <div class="box">
+                        <img src="zerozero.png" width="40%">
+                        <p style="width: 50%; margin-left: 10px;">5 февраля 2025 года, на сервере, спустя несколько тестов, появилось время, в которое всегда заканчивается набор. Теперь с этого дня сервер заканчивает набор ровно в 00:00 по МСК</p>
                     </div>
                     <div class="box">
                         <p style="width: 70%; text-align: center; margin-top: 100px; margin-bottom: 100px;">На данный момент это вся история 2g2m, но сервер продолжает существовать, и история будет продолжатся!</p>
@@ -343,7 +377,7 @@
 
             <div class="game-box game-third-menu" style="display: none">
                 <p style="text-align: center; margin-top: 50px; margin-bottom: 50px; width: 50%;">Добро пожаловать в мини-игру<br>"Очисть лимит"</p>
-                <div class="game-third" style="width: 800px; height: 450px; border: white solid 2px; border-radius: 5px; background-image: url('thirdgameback.png'); background-size: cover;"> 
+                <div class="game-third" style="width: 800px; height: 450px; border: white solid 2px; border-radius: 5px; background-image: url('thirdgameback.png');"> 
                     <button class="play-button" style="margin: 10px 10px; position: absolute; color: white; border-radius: 5px; border: white solid 2px;; font-family: Comic Sans MS, Comic Sans; font-size: 20;">заполнить лимит</button>
                     <img src="gamethirdobj1.png" style="position: absolute; transform: translateX(390px) translateY(240px);" draggable="false">
                     <p style="display: flex; justify-content: center; transform: translateX(40%) translateY(395px); background-color: #333333; border-radius: 5px; width: 55%; border: white solid 2px;">лимит: 1100/1100 Очищенных лимитов: 0</p>
@@ -354,7 +388,7 @@
 
             <div class="game-box game-fourth-menu" style="display: none">
                 <p style="text-align: center; margin-top: 50px; margin-bottom: 50px; width: 50%;">Добро пожаловать в мини-игру<br>"Сосчитай пенисы"</p>
-                <div class="game-fourth" style="width: 800px; height: 450px; border: white solid 2px; border-radius: 5px; background-image: url('penisgameback1.png'); background-size: cover;"> 
+                <div class="game-fourth" style="width: 800px; height: 450px; border: white solid 2px; border-radius: 5px; background-image: url('penisgameback1.png'); background-position-x: -500px; background-position-y: -350px;"> 
                     <div class="pens"></div>
                     <p class="timer" style="display: flex; justify-content: center; transform: translateX(40%); background-color: #333333; border-radius: 5px; width: 55%; border: white solid 2px;">Время до перезагрузки: 5 сек</p>
                     <div class="bargamefourth" style="background-color: #333333; border-radius: 5px; width: 70%; border: white solid 2px; display: flex; justify-content: center; transform: translateX(21.2%) translateY(330px); height: 30px; flex-direction: row;">
@@ -421,12 +455,15 @@
                 </div>
                 <img src="lifechnl.png" width="33%">
             </div>
-            <div class="box">
+            <div class="box" style="display: none;">
                 <img src="Tree.png" style="margin-right: 10px;">
                 <p style="width: 50%;">А это дерево (просто дерево)</p>
             </div>
         </div>
     </div>
-    </body>
+</div>
+<div class="ad" style="margin-left: 80%; margin-top: 20px; position: absolute; justify-content: flex-end;"></div>
+</div>
+</body>
     <script src="index.js"></script>
 </html>

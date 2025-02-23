@@ -348,8 +348,8 @@ gamethirdobj3.addEventListener("click", function() {
     gamethirdobj2.innerHTML = "лимит: " + countobjects + "/" + "1100 Очищенных лимитов: " + countclear
 })
 
-const pens = ["pen1.png", "pen2.png", "pen3.png"]
-const pensBack = ["penisgameback1.png", "penisgameback2.png", "penisgameback3.png"]
+const pens = ["pen1.png", "pen2.png", "pen3.png", "pen4.png", "pen5.png", "pen6.png", "pen7.png", "pen8.png", "pen9.png", "pen10.png", "pen11.png", "pen12.png", "pen13.png", "pen14.png", "pen15.png",  "pen16.png"]
+const pensBack = ["penisgameback1.png", "penisgameback2.png", "penisgameback3.png", "penisgameback4.png", "penisgameback5.png"]
 
 let lok = document.querySelector(".lok")
 let time = 5
@@ -358,12 +358,14 @@ let rightanswersfourthgame = 0
 let memorybackpen = gamefourth.style.backgroundImage
 
 for (let i = 0; i < countpen; i++) {
-    pendiv.innerHTML += "<img src= '" + pens[Math.round(Math.random() * (pens.length - 1))] + "'style='position: absolute; transform: translateX(" + Math.round(Math.random() * 600) + "px) translateY(" + Math.round(Math.random() * 300) + "px);' draggable='false' width='100px'>"
+    pendiv.innerHTML += "<img class ='noselect' src= '" + pens[Math.round(Math.random() * (pens.length - 1))] + "'style='position: absolute; transform: translateX(" + Math.round(Math.random() * 540) + "px) translateY(" + Math.round(Math.random() * 130 + 100) + "px);' draggable='false'>"
     time = 6
     gamefourthobj1.innerHTML = "Время до перезагрузки: " + time + " сек"
     inputfourthgame.value = ""
 }
 
+gamefourth.style.backgroundPositionX = -1 * Math.round(Math.random() * 500) + "px"
+gamefourth.style.backgroundPositionY = -1 * Math.round(Math.random() * 350) + "px"
 gamefourth.style.backgroundImage = pensBack[Math.round(Math.random() * (pensBack.length - 1))]
 
 setInterval(function() {
@@ -374,13 +376,15 @@ setInterval(function() {
     pendiv.innerHTML = ""
     countpen = Math.round(Math.random() * 5) + 1
     for (let i = 0; i < countpen; i++) {
-        pendiv.innerHTML += "<img src= '" + pens[Math.round(Math.random() * (pens.length - 1))] + "'style='position: absolute; transform: translateX(" + Math.round(Math.random() * 600) + "px) translateY(" + Math.round(Math.random() * 300) + "px);' draggable='false' width='100px'>"
+        pendiv.innerHTML += "<img class ='noselect' src= '" + pens[Math.round(Math.random() * (pens.length - 1))] + "'style='position: absolute; transform: translateX(" + Math.round(Math.random() * 540) + "px) translateY(" + Math.round(Math.random() * 130 + 100) + "px);' draggable='false'>"
         time = 6
         gamefourthobj1.innerHTML = "Время до перезагрузки: " + time + " сек"
         inputfourthgame.value = ""
     }
     memorybackpen = gamefourth.style.backgroundImage
     gamefourth.style.backgroundImage = 'url(' + pensBack[Math.round(Math.random() * (pensBack.length - 1))] + ")"
+    gamefourth.style.backgroundPositionX = -1 * Math.round(Math.random() * 500) + "px"
+    gamefourth.style.backgroundPositionY = -1 * Math.round(Math.random() * 350) + "px"
     while (memorybackpen == gamefourth.style.backgroundImage) {
         gamefourth.style.backgroundImage = 'url(' + pensBack[Math.round(Math.random() * (pensBack.length - 1))] + ")"
     }
